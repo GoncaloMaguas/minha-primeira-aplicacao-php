@@ -2,8 +2,10 @@
 
 session_start();
 
-require "config.php";
-require "functions/url.php";
+require_once "config.php";
+require_once "functions/url.php";
+require_once "functions/message.php";
+require_once "functions/auh.php";
 
 if (empty($GET["route"])){
     $page="login";
