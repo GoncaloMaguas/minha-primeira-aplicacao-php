@@ -6,6 +6,11 @@ O objetivo de criar `funções` é para `facilitar/automatizar/delegar` um deter
 ## User Story #1
 Dentro do ficheiro `url.php` que está na pasta `functions`, crie a função abaixo.
 
+<span style="color: #ef5350; font-size: 1rem">**ATENÇÃO:**</span> Se estiverem a trabalhar dentro de uma pasta no `htdocs`, por exemplo `htdocs/minha-primeira-aplicacao-php`, 
+é preciso indicar a `URL (localhost)` + `PASTA_TRABALHO (minha-primeira-aplicacao-php)`.
+
+A url deve se parecer com isso: **`http://localhost/minha-primeira-aplicacao-php?`**
+
 *Leia com calma todos os comentários para entender melhor o que esta função faz*
 
 <span style="color: #ef5350; font-size: 0.9rem">*Digite o código abaixo linha a linha para praticar*</span>
@@ -40,7 +45,11 @@ function url_redirect($values = []) {
 
     // Leia mais sobre a função "header" no site oficial do PHP.
     // https://www.php.net/manual/en/function.header
-    header('Location: http://localhost/?' . $buildQueryString);
+    
+    // ATENÇÃO 1: Troque o nome "PASTA_TRABALHO" pelo nome que está dentro do htdocs.
+    // ATENÇÃO 2: Mantenha a interrogação no final para que seja possível criar uma querystring depois da
+    // concatenação.
+    header('Location: http://localhost/PASTA_TRABALHO?' . $buildQueryString);
 
     /*
      * Se a variável $values tiver um array associativo com o este conteúdo ----> ['route' => 'dashboard']

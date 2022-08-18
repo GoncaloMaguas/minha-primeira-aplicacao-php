@@ -62,3 +62,24 @@ Principais Comandos do Git
 *   `git clone https://github.com/user/project.git` » Copia um projeto `GIT` remoto para o PC
 *   `info git` » Obtém a Documentação do git
 *   `man git` » Obtém o Manual do git
+
+## User Story #5
+### Criar uma branch chamada "new-feature"
+```
+git checkout -b new-feature main
+```
+### Editar ficheiros
+```
+git add <file>
+git commit -m "Start a feature"
+```
+### Editar ficheiros
+```
+git add <file>
+git commit -m "Finish a feature"
+```
+### Fazer Merge da branch "new-feature"
+```
+git checkout main
+git merge new-feature
+```

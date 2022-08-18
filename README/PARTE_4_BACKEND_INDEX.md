@@ -51,6 +51,8 @@ No `index.php`, importe os seguintes ficheiros por ordem com a instrução `requ
 
 1. **config.php**
 2. functions/**url.php**
+3. functions/**message.php**
+4. functions/**auth.php**
 
 
 <details>
