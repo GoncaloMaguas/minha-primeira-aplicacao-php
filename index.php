@@ -37,11 +37,11 @@ $page_template= "templates/page_" . $page . ".php";
 
 require_once ("templates/head.php");
 
-if($page_template != NULL){  //diferente parte 4 story 9
-
-        require_once ($page_template);
+if (file_exists($page_template)) {
+    require_once $page_template;
 } else {
-    require_once ("templates/page_not_found.php");
+    /* importa a página de erro 404 not found */
+    require_once 'templates/page_not_found.php';
 }
 
 
