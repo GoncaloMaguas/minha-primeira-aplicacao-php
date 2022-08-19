@@ -27,7 +27,7 @@ function url_redirect($values = []) {
 
     // Leia mais sobre a função "header" no site oficial do PHP.
     // https://www.php.net/manual/en/function.header
-    header('Location: http://localhost/?' . $buildQueryString);
+    header('Location: http://localhost/exemplos/exercicios/minha-primeira-aplicacao-php?' . $buildQueryString);
 
     /*
      * Se a variável $values tiver um array associativo com o este conteúdo ----> ['route' => 'dashboard']
