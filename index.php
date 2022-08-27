@@ -1,48 +1,56 @@
 <?php
-
 session_start();
 
+
+
 require_once 'config.php';
+
+
 require_once 'functions/url.php';
 require_once 'functions/message.php';
 require_once 'functions/auth.php';
 
-if (empty($GET["route"])){
-    $page="login";
+
+if (empty($_GET['route'])) {
+    $page = 'login';
 } else {
-    $page=$GET_["route"];
+    $page = $_GET['route'];
 }
 
 
-switch($page){
-    case "dashboard":
+switch ($page) {
+    case 'dashboard':
 
-    require_once ("controllers/dashboard.php");
-    break;
+        require_once 'controllers/dashboard.php';
+        break;
+    case 'authenticate':
 
-    case "authenticate":
+        require_once 'controllers/authenticate.php';
+        break;
+    case 'logout':
 
-    require_once ("controllers/authenticate.php");
-    break;
+        require_once 'controllers/logout.php';
+        break;
 
+    default:
 
-    case "logout":
-
-    require_once ("controllers/logout.php");
-    break;
-    
+        break;
 }
 
-$page_template= "templates/page_" . $page . ".php";
 
-require_once ("templates/head.php");
+$page_template = 'templates/page_' . $page . '.php';
+
+
+
+require_once 'templates/head.php';
+
+
 
 if (file_exists($page_template)) {
     require_once $page_template;
 } else {
-    /* importa a página de erro 404 not found */
+
     require_once 'templates/page_not_found.php';
 }
 
-
-require_once ("templates/foot.php");
+require_once 'templates/foot.php';

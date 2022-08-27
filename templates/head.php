@@ -25,20 +25,20 @@
                     </li>
                 </ul>
                 <ul>
-                <?php if (is_authenticated()) : ?>
-                    <!-- Este "li" só será exibido caso eu tenha me autenticado -->
+                    <?php if (is_authenticated()) : ?>
+                        <!-- Este "li" só será exibido caso eu tenha me autenticado -->
+                        <li>
+                            <a href="?route=dashboard">Dashboard</a>
+                        </li>
+                    <?php endif; ?>
                     <li>
-                        <a href="?route=dashboard">Dashboard</a>
-                    </li>
-                <?php endif; ?>
-                    <li>
-                <?php if (is_authenticated()) : ?>
-                        <!-- Este hyperlink só será exibido caso eu tenha me autenticado -->
-                        <a class="user-login-button" href="?route=logout">Fazer Logout</a>
-                <?php else : ?>
-                        <!-- Este hyperlink só será exibido caso eu não tenha me autenticado -->
-                        <a class="user-login-button" href="?route=login">Fazer Login</a>
-                <?php endif; ?>
+                        <?php if (is_authenticated()) : ?>
+                            <!-- Este hyperlink só será exibido caso eu tenha me autenticado -->
+                            <a class="user-login-button" href="?route=logout">Fazer Logout</a>
+                        <?php else : ?>
+                            <!-- Este hyperlink só será exibido caso eu não tenha me autenticado -->
+                            <a class="user-login-button" href="?route=login">Fazer Login</a>
+                        <?php endif; ?>
                     </li>
                 </ul>
             </nav>
