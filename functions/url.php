@@ -28,15 +28,12 @@ function url_redirect($values = [])
 
     // Leia mais sobre a função "header" no site oficial do PHP.
     // https://www.php.net/manual/en/function.header
-<<<<<<< HEAD
-    header('Location: http://localhost/exemplos/exercicios?' . $buildQueryString);
-=======
+
 
     // ATENÇÃO 1: Troque o nome "PASTA_TRABALHO" pelo nome que está dentro do htdocs.
     // ATENÇÃO 2: Mantenha a interrogação no final para que seja possível criar uma querystring depois da
     // concatenação.
     header('Location: http://localhost/exemplos/exercicios/minha-primeira-aplicacao-php?' . $buildQueryString);
->>>>>>> develop
 
     /*
      * Se a variável $values tiver um array associativo com o este conteúdo ----> ['route' => 'dashboard']
