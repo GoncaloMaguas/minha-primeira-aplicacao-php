@@ -48,6 +48,7 @@ $page_template = 'templates/page_' . $page . '.php';
 
 $page_template= "templates/page_" . $page . ".php";
 
+require_once 'templates/head.php';
 
 if($page_template != NULL){  //diferente parte 4 story 9
 
