@@ -13,35 +13,36 @@
  * @param $message string
  * @return void
  */
-function set_flash_message($message = '') {
-  // Iremos usar a super global $_SESSION para fazer este "truque"
-  // Vamos gravar a nossa mensagem dentro da chave 'flash_message' 
-  // na super global $_SESSION
-  $_SESSION['flash_message'] = $message;
+function set_flash_message($message = '')
+{
+    // Iremos usar a super global $_SESSION para fazer este "truque"
+    // Vamos gravar a nossa mensagem dentro da chave 'flash_message' 
+    // na super global $_SESSION
+    $_SESSION['flash_message'] = $message;
 
-  // A função "strtotime" retorna um conjunto de números que chamamos de "TIMESTAMP"
+    // A função "strtotime" retorna um conjunto de números que chamamos de "TIMESTAMP"
 
-  // Por exemplo, o valor "1658587240" que representa um TIMESTAMP, se eu transformar este número 
-  // em uma DATA/HORA, eu vou receber o seguinte resultado: 2022-07-23 15:40:40
-  // Mais exemplos
-  // 1. 1658587240 ----> 2022-07-23 15:40:40
-  // 2. 1658587241 ----> 2022-07-23 15:40:41
-  // 3. 1658587242 ----> 2022-07-23 15:40:42
+    // Por exemplo, o valor "1658587240" que representa um TIMESTAMP, se eu transformar este número 
+    // em uma DATA/HORA, eu vou receber o seguinte resultado: 2022-07-23 15:40:40
+    // Mais exemplos
+    // 1. 1658587240 ----> 2022-07-23 15:40:40
+    // 2. 1658587241 ----> 2022-07-23 15:40:41
+    // 3. 1658587242 ----> 2022-07-23 15:40:42
 
-  // Resumindo, o TIMESTAMP é um conjunto de números (1658587240 -> milissegundos)
-  // e que a cada segundo/milissegundos o seu valor vai sendo incrementado.
+    // Resumindo, o TIMESTAMP é um conjunto de números (1658587240 -> milissegundos)
+    // e que a cada segundo/milissegundos o seu valor vai sendo incrementado.
 
-  // Para saber mais sobre a história do TIMESTAMP, vocês podem consultar o link abaixo, é super interessante.
-  // https://treinamento24.com/library/lecture/read/873865-como-funciona-o-timestamp
-  // https://hkotsubo.github.io/blog/2019-05-02/o-que-e-timestamp
+    // Para saber mais sobre a história do TIMESTAMP, vocês podem consultar o link abaixo, é super interessante.
+    // https://treinamento24.com/library/lecture/read/873865-como-funciona-o-timestamp
+    // https://hkotsubo.github.io/blog/2019-05-02/o-que-e-timestamp
 
-  // Para receber o TIMESTAMP da função "strtotime", temos que pedir para retornar o TIMESTAMP de algum momento no tempo.
-  // O momento que queremos é o "agora + 1 segundo no futuro" ou seja o "now + 1 sec" ----> strtotime('now + 1 sec')
-  // Fonte: https://www.php.net/manual/en/function.strtotime.php
+    // Para receber o TIMESTAMP da função "strtotime", temos que pedir para retornar o TIMESTAMP de algum momento no tempo.
+    // O momento que queremos é o "agora + 1 segundo no futuro" ou seja o "now + 1 sec" ----> strtotime('now + 1 sec')
+    // Fonte: https://www.php.net/manual/en/function.strtotime.php
 
-  // Isto significa que a nossa mensagem só será exibida durante 1 segundo.
-  $timestampNowPlus1Sec = strtotime('now + 1 sec');
-  $_SESSION['flash_message_timestamp'] = $timestampNowPlus1Sec;
+    // Isto significa que a nossa mensagem só será exibida durante 1 segundo.
+    $timestampNowPlus1Sec = strtotime('now + 1 sec');
+    $_SESSION['flash_message_timestamp'] = $timestampNowPlus1Sec;
 }
 
 
@@ -53,7 +54,8 @@ function set_flash_message($message = '') {
  * 
  * @return void
  */
-function get_flash_message() {
+function get_flash_message()
+{
     // A condição abaixo testa se existe algum valor na chave 'flash_message'
     // da super global $_SESSION.
     // se não existir valores, retorna null (retorna vazio)
@@ -83,7 +85,7 @@ function get_flash_message() {
     // A função "unset" nos casos que iremos usar logo abaixo
     // remove uma chave (chave do array associativo) de dentro da super global $_SESSION.
     // https://www.php.net/manual/en/function.isset.php
-        
+
     /*
      *  Exemplo
      * 

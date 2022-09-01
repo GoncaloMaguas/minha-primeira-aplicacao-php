@@ -1,3 +1,5 @@
 <?php
 session_destroy();
-url_redirect(["route" => "login"]);
+
+
+url_redirect(['route' => 'login']);
