@@ -41,7 +41,6 @@ switch ($page) {
 $page_template = 'templates/page_' . $page . '.php';
 
 
-
 require_once 'templates/head.php';
 
 
