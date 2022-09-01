@@ -25,8 +25,21 @@ if ($login == USER_LOGIN && $password == USER_PASSWORD) {
 
     set_flash_message("Utilizador autenticado com sucesso!");
 
-
     url_redirect(['route' => 'dashboard']);
+
+
+} else if ($login == USER_LOGIN && $password != USER_PASSWORD) {
+    set_flash_message("Utilizador correto mas senha incorreta, tente novamente!");
+
+    url_redirect(['route' => 'login']);
+
+
+} else if ($login != USER_LOGIN && $password == USER_PASSWORD) {
+    set_flash_message("Senha correta mas utilizador incorreto, tente novamente!");
+
+    url_redirect(['route' => 'login']);
+
+
 } else {
 
     set_flash_message("Utilizador ou senha incorreta, tente novamente!");
